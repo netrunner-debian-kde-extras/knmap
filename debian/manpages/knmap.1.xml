@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "/usr/share/sgml/docbook/dtd/4.5/docbookx.dtd" [
+]>
+
+<refentry id="knmap">
+  <refentryinfo>
+    <author>
+      <firstname>Raphaël</firstname>
+      <surname>Pinson</surname>
+      <email>raphink@raphink.net</email>
+    </author>
+    <author>
+      <firstname>Ryan</firstname>
+      <surname>Kavanagh</surname>
+      <email>ryanakca@kubuntu.org</email>
+    </author>
+    <copyright>
+      <year>2005</year>
+      <holder>Raphaël Pinson</holder>
+    </copyright>
+    <copyright>
+      <year>2008</year>
+      <holder>Ryan Kavanagh</holder>
+    </copyright>
+    <legalnotice>
+      <para>Permission is granted to copy, distribute and/or modify this
+      document under the terms of the <acronym>GNU</acronym> General Public
+      License, Version 2 or any later version published by the Free Software
+      Foundation.
+
+      </para>
+      <para>
+      On Debian systems, the complete text of the GNU General Public
+      License can be found in
+      <filename moreinfo="none">/usr/share/common-licenses/GPL</filename>.
+
+      </para>
+    </legalnotice>
+    <!-- XXX IMPORTANT XXX -->
+    <!-- Keep this date up to date: -->
+    <date>2008-05-07</date>
+    <!--  ^^^^^^^^^^ -->
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>knmap</refentrytitle>
+    <manvolnum>1</manvolnum>
+    <refmiscinfo>knmap</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>knmap</refname>
+    <package>knmap</package>
+    <refpurpose>KDE-based interface to the `nmap' facility.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis sepchar=" ">
+      <command moreinfo="none">knmap</command>
+      <arg choice="opt" rep="norepeat">
+        <option>
+          <replaceable>Generic-options</replaceable>
+        </option>
+      </arg>
+      <arg choice="opt" rep="norepeat">
+        <option>
+          <replaceable>Qt-options</replaceable>
+        </option>
+      </arg>
+      <arg choice="opt" rep="norepeat">
+        <option>
+          <replaceable>KDE-options</replaceable>
+        </option>
+      </arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+    <para>
+      Knmap is a KDE-based interface to the `nmap' facility.
+    </para>
+    <para>
+      The main Knmap window provides for the entry of nmap options and the
+      display of nmap-generated output.
+    </para>
+    <para>
+      This program is a complete re-write of one by the same name written by
+      Alexandre Sagala. The last version of that program was 0.9 which was
+      released on 2003-03-09 and targeted the KDE 2.2 and QT 2.3 environments.
+      Unfortunately it does not compile on today's KDE / QT environments.
+    </para>
+    <para>
+      Not to mention that it did not cater for the full set of `nmap' options.
+      Or, perhaps, `nmap' progressed whilst that version of Knmap languished.
+    </para>
+  </refsect1>
+  <refsect1 id="options">
+    <title>OPTIONS</title>
+    <para>
+      All <productname class="trade">KDE</productname> and <productname
+      class="trade">Qt</productname> programs accept some common
+      command-line options. Knmap has no application-specific options.
+    </para>
+    <para>
+      <refsect2 id="generic_options">
+        <title>Generic options:</title>
+        <variablelist remap="TP">
+          <varlistentry>
+            <term>
+              <option>--help</option>
+            </term>
+            <listitem>
+              <para>Show help about options</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--help-qt</option>
+            </term>
+            <listitem>
+              <para>Show Qt specific options</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--help-kde</option>
+            </term>
+            <listitem>
+              <para>Show KDE specific options</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--help-all</option>
+            </term>
+            <listitem>
+              <para>Show all options</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--author</option>
+            </term>
+            <listitem>
+              <para>Show author information</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>-v</option>, <option>--version</option>
+            </term>
+            <listitem>
+              <para>Show version information</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--license</option>
+            </term>
+            <listitem>
+              <para>Show license information</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--</option>
+            </term>
+            <listitem>
+              <para>Indicates end of options</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </refsect2>
+      <refsect2 id="ss_kde_options">
+        <title>KDE options:</title>
+        <variablelist remap="TP">
+          <varlistentry>
+            <term>
+              <option>--caption &lt;caption></option>
+            </term>
+            <listitem>
+              <para>Use 'caption' as name in the titlebar</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--icon &lt;icon></option>
+            </term>
+            <listitem>
+              <para>Use 'icon' as the application icon</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--miniicon &lt;icon></option>
+            </term>
+            <listitem>
+              <para>Use 'icon' as the icon in the titlebar</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--config &lt;filename></option>
+            </term>
+            <listitem>
+              <para>Use alternative configuration file</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--dcopserver &lt;server></option>
+            </term>
+            <listitem>
+              <para>Use the DCOP Server specified by 'server'</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--nocrashhandler</option>
+            </term>
+            <listitem>
+              <para>Disable crash handler, to get core dumps</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--waitforwm</option>
+            </term>
+            <listitem>
+              <para>Waits for a WM_NET compatible windowmanager</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--style &lt;style></option>
+            </term>
+            <listitem>
+              <para>sets the application GUI style</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--geometry &lt;geometry></option>
+            </term>
+            <listitem>
+              <para>sets the client geometry of the main widget - see man X for the argument format</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </refsect2>
+      <refsect2 id="qt_options">
+        <title>Qt options:</title>
+        <variablelist remap="TP">
+          <varlistentry>
+            <term>
+              <option>--display &lt;displayname></option>
+            </term>
+            <listitem>
+              <para>Use the X-server display 'displayname'</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--session &lt;sessionId></option>
+            </term>
+            <listitem>
+              <para>Restore the application for the given 'sessionId'</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--cmap</option>
+            </term>
+            <listitem>
+              <para>Causes the application to install a private color
+map on an 8-bit display</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--ncols &lt;count></option>
+            </term>
+            <listitem>
+              <para>Limits the number of colors allocated in the color
+cube on an 8-bit display, if the application is
+using the QApplication::ManyColor color
+specification</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--nograb</option>
+            </term>
+            <listitem>
+              <para>tells Qt to never grab the mouse or the keyboard</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--dograb</option>
+            </term>
+            <listitem>
+              <para>running under a debugger can cause an implicit
+-nograb, use -dograb to override</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--sync</option>
+            </term>
+            <listitem>
+              <para>switches to synchronous mode for debugging</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--fn, --font &lt;fontname></option>
+            </term>
+            <listitem>
+              <para>defines the application font</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--bg, --background &lt;color></option>
+            </term>
+            <listitem>
+              <para>sets the default background color and an
+application palette (light and dark shades are
+calculated)</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--fg, --foreground &lt;color></option>
+            </term>
+            <listitem>
+              <para>sets the default foreground color</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--btn, --button &lt;color></option>
+            </term>
+            <listitem>
+              <para>sets the default button color</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--name &lt;name></option>
+            </term>
+            <listitem>
+              <para>sets the application name</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--title &lt;title></option>
+            </term>
+            <listitem>
+              <para>sets the application title (caption)</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--visual TrueColor</option>
+            </term>
+            <listitem>
+              <para>forces the application to use a TrueColor visual on
+an 8-bit display</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--inputstyle &lt;inputstyle></option>
+            </term>
+            <listitem>
+              <para>sets XIM (X Input Method) input style. Possible
+values are onthespot, overthespot, offthespot and
+root</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--im &lt;XIM server></option>
+            </term>
+            <listitem>
+              <para>set XIM server</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--noxim</option>
+            </term>
+            <listitem>
+              <para>disable XIM</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>
+              <option>--reverse</option>
+            </term>
+            <listitem>
+              <para>mirrors the whole layout of widgets</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </refsect2>
+    </para>
+  </refsect1>
+  <refsect1 id="see_also">
+    <title>SEE ALSO</title>
+    <para>Full user documentation is available through the KDE Help Center. You can
+    also enter the URL <emphasis remap="B">help:/kmap/</emphasis> directly into
+    konqueror or you can run `<emphasis remap="B">khelpcenter
+        help:/knmap/</emphasis>' from the command line.
+    </para>
+  </refsect1>
+  <refsect1 id="authors">
+    <title>AUTHORS</title>
+    <literallayout remap=".nf" format="linespecific" class="normal">
+Kevin Gilbert &lt;kev.gilbert@cdu.edu.au>
+<!-- .br -->
+    </literallayout>
+  </refsect1>
+  <refsect1>
+    <title>COPYRIGHT</title>
+    <para>
+      This manual page was written by Raphaël Pinson
+      <email>raphink@raphink.net</email> for the
+      <productname class="trade">Debian</productname> system (but may be used by
+      others).
+    </para>
+    <para>It was finished by Ryan Kavanagh
+      <email>ryanakca@kubuntu.org</email> in June 2008.
+    </para>
+    <para>Permission is granted to copy, distribute and/or modify this
+      document under the terms of the <acronym>GNU</acronym> General Public
+      License, Version 2 or any later version published by the Free Software
+      Foundation.
+    </para>
+    <para>
+      On Debian systems, the complete text of the GNU General Public
+      License can be found in
+      <filename moreinfo="none">/usr/share/common-licenses/GPL</filename>.
+    </para>
+  </refsect1>
+</refentry>

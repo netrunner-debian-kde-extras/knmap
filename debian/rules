@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+cdbs_kde_enable_debug = --disable-debug 
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/kde.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+
+DEB_INSTALL_MANPAGES_knmap = knmap.1
+
+post-patches::
+	# regenerating files to build app
+	libtoolize --copy --force
+	cp -f /usr/share/aclocal/libtool.m4 admin/libtool.m4.in
+	$(MAKE) -f Makefile.cvs
+
+build/knmap::
+	docbook2x-man debian/manpages/knmap.1.xml
+
+install/knmap::
+	dh_install src/knmap.desktop usr/share/applications/kde
+	dh_link usr/share/doc/kde/HTML/en/knmap usr/share/doc/knmap/html
+
+clean::
+	rm -f knmap.1
+	# removing files not cleaned by upstream
+	rm -f configure
+	rm -f doc/en/Makefile.in
+	rm -f src/Makefile.in
+	rm -f Makefile.in
+	rm -f subdirs
+	rm -f aclocal.m4
+	rm -f config.h.in
+	rm -f acinclude.m4
+	rm -f po/Makefile.in
+	rm -f admin/ltmain.sh
+	rm -f admin/libtool.m4.in
+	rm -f doc/Makefile.in

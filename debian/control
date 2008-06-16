@@ -1,0 +1,30 @@
+Source: knmap
+Section: net
+Priority: extra
+Maintainer: Ryan Kavanagh <ryanakca@kubuntu.org>
+Uploaders: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 5.0.51), cdbs, libtool, automake, autoconf, \
+ autotools-dev, kdelibs4-dev, quilt, docbook2x, docbook
+Homepage: http://sourceforge.net/projects/knmap
+Standards-Version: 3.8.0
+XS-Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/kde-extras/knmap/
+XS-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/kde-extras/knmap/
+
+Package: knmap
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nmap
+Description: KDE interface to nmap, the Network Mapper
+ Knmap is a KDE-based interface to the 'nmap' facility available at
+ http://www.insecure.org/nmap.
+ .
+ The main Knmap window provides for the entry of nmap options and the display of
+ nmap-generated output.
+ .
+ This program is a complete re-write of one by the same name written by
+ Alexandre Sagala. The last version of that program was 0.9 which was released
+ on 2003-03-09 and targeted the KDE 2.2 and QT 2.3 environments.  Unfortunately
+ it does not compile on today's KDE / QT environments.
+ .
+ Nmap ("Network Mapper") is a utility for network exploration or security
+ auditing. It supports ping scanning (determine which hosts are up), many port
+ scanning techniques, version detection, and TCP/IP fingerprinting.

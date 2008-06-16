@@ -1,0 +1,14 @@
+Index: knmap-2.1/admin/cvs.sh
+===================================================================
+--- knmap-2.1.orig/admin/cvs.sh	2008-06-07 17:49:35.000000000 -0400
++++ knmap-2.1/admin/cvs.sh	2008-06-07 17:49:53.000000000 -0400
+@@ -64,7 +64,8 @@
+     echo "*** KDE requires automake 1.6.1 or newer"
+     exit 1
+     ;;
+-  automake*1.6.* | automake*1.7* | automake*1.8.* | automake*1.9* ) : ;;
++  automake*1.6.* | automake*1.7* | automake*1.8.* | automake*1.9* | \
++  automake*1.10* ) : ;;
+   "" )
+     echo "*** AUTOMAKE NOT FOUND!."
+     echo "*** KDE requires automake 1.6.1 or newer"

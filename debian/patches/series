@@ -1,0 +1,5 @@
+00_autoconf2.6.diff
+01_automake1.10.1.diff
+02_fix_ld-flags.diff
+03_no_encoding_in_desktop.diff
+04_report_bugs.diff

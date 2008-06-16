@@ -1,0 +1,13 @@
+Index: knmap-2.1/src/Makefile.am
+===================================================================
+--- knmap-2.1.orig/src/Makefile.am	2008-06-12 06:36:04.000000000 -0400
++++ knmap-2.1/src/Makefile.am	2008-06-12 06:36:23.000000000 -0400
+@@ -30,7 +30,7 @@
+ 					profiledialog.cpp loggingoptions.cpp simpleoptions.cpp pandsoptions.cpp whatsthis.cpp \
+ 					tabwidgetptrlist.cpp tabwidgetdata.cpp scanwidget.cpp indexwidget.cpp scannamedialog.cpp \
+ 			scanstack.cpp scanmonitor.cpp scanmonitorevent.cpp nmapoutputbuffer.cpp
+-knmap_LDFLAGS = $(KDE_RPATH) $(all_libraries)
++knmap_LDFLAGS = #$(KDE_RPATH) $(all_libraries)
+ knmap_LDADD = $(LIB_KIO) $(LIB_KHTML)
+ 
+ # this is where the desktop file will go 

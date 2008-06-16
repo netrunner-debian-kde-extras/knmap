@@ -1,0 +1,4 @@
+?package(knmap): title="knmap" \
+  needs="X11" \
+  section="Applications/Network/Monitoring" \
+  command="/usr/bin/knmap"

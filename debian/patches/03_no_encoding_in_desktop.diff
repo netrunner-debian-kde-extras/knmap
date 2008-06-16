@@ -1,0 +1,10 @@
+Index: knmap-2.1/src/knmap.desktop
+===================================================================
+--- knmap-2.1.orig/src/knmap.desktop	2008-06-07 18:32:07.000000000 -0400
++++ knmap-2.1/src/knmap.desktop	2008-06-07 18:32:17.000000000 -0400
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=knmap
+ Name[xx]=xxknmapxx
+ Exec=knmap
