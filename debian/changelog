@@ -1,7 +1,7 @@
 knmap (2.1-3) UNRELEASED; urgency=low
 
   * Add the Debian KDE Extras Team to Uploaders
-  * Add XS-Vcs-Svn and XS-Vcs-Browser to control
+  * Add Vcs-Svn and Vcs-Browser to control
 
  -- Ryan Kavanagh <ryanakca@kubuntu.org>  Mon, 16 Jun 2008 16:28:36 -0400
 
