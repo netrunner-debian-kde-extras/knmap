@@ -1,3 +1,5 @@
+## 02_fix_ld-flags.diff by Ryan Kavanagh <ryanakca@kubuntu.org>
+## Description: We don't need useless linking
 Index: knmap-2.1/src/Makefile.am
 ===================================================================
 --- knmap-2.1.orig/src/Makefile.am	2008-06-12 06:36:04.000000000 -0400

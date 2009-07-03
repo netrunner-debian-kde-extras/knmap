@@ -1,3 +1,5 @@
+## 03_text_files.diff by Ryan Kavanagh <ryanakca@kubuntu.org>
+## Description: Remove encoding tag
 Index: knmap-2.1/src/knmap.desktop
 ===================================================================
 --- knmap-2.1.orig/src/knmap.desktop	2008-06-07 18:32:07.000000000 -0400

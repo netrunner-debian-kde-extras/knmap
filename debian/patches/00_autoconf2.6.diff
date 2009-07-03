@@ -1,3 +1,5 @@
+## 00_autoconf2.6.diff by Jonathan Riddell <jriddell@ubuntu.com>
+## Description: Allow us to use autoconf2.6
 Index: knmap-2.1/admin/cvs.sh
 ===================================================================
 --- knmap-2.1.orig/admin/cvs.sh	2008-06-07 17:44:33.000000000 -0400
