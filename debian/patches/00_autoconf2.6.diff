@@ -1,10 +1,8 @@
 ## 00_autoconf2.6.diff by Jonathan Riddell <jriddell@ubuntu.com>
 ## Description: Allow us to use autoconf2.6
-Index: knmap-2.1/admin/cvs.sh
-===================================================================
---- knmap-2.1.orig/admin/cvs.sh	2008-06-07 17:44:33.000000000 -0400
-+++ knmap-2.1/admin/cvs.sh	2008-06-07 17:45:07.000000000 -0400
-@@ -29,7 +29,7 @@
+--- a/admin/cvs.sh
++++ b/admin/cvs.sh
+@@ -29,7 +29,7 @@ check_autotool_versions()
  {
  AUTOCONF_VERSION=`$AUTOCONF --version | head -n 1`
  case $AUTOCONF_VERSION in
@@ -13,7 +11,7 @@ Index: knmap-2.1/admin/cvs.sh
    "" )
      echo "*** AUTOCONF NOT FOUND!."
      echo "*** KDE requires autoconf 2.52, 2.53 or 2.54"
-@@ -44,7 +44,7 @@
+@@ -44,7 +44,7 @@ esac
   
  AUTOHEADER_VERSION=`$AUTOHEADER --version | head -n 1`
  case $AUTOHEADER_VERSION in

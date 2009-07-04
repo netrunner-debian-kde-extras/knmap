@@ -1,10 +1,9 @@
 #!/usr/bin/make -f
 
-cdbs_kde_enable_debug = --disable-debug 
-
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/kde.mk
 include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+include /usr/share/cdbs/1/rules/utils.mk
 
 DEB_INSTALL_MANPAGES_knmap = knmap.1
 
@@ -19,6 +18,7 @@ build/knmap::
 
 install/knmap::
 	dh_install src/knmap.desktop usr/share/applications/kde
+	rm -rf debian/knmap/usr/share/applnk
 	dh_link usr/share/doc/kde/HTML/en/knmap usr/share/doc/knmap/html
 
 clean::

@@ -1,10 +1,8 @@
 ## 02_fix_ld-flags.diff by Ryan Kavanagh <ryanakca@kubuntu.org>
 ## Description: We don't need useless linking
-Index: knmap-2.1/src/Makefile.am
-===================================================================
---- knmap-2.1.orig/src/Makefile.am	2008-06-12 06:36:04.000000000 -0400
-+++ knmap-2.1/src/Makefile.am	2008-06-12 06:36:23.000000000 -0400
-@@ -30,7 +30,7 @@
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -30,7 +30,7 @@ knmap_SOURCES = main.cpp knmap.cpp mainw
  					profiledialog.cpp loggingoptions.cpp simpleoptions.cpp pandsoptions.cpp whatsthis.cpp \
  					tabwidgetptrlist.cpp tabwidgetdata.cpp scanwidget.cpp indexwidget.cpp scannamedialog.cpp \
  			scanstack.cpp scanmonitor.cpp scanmonitorevent.cpp nmapoutputbuffer.cpp
