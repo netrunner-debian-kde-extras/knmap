@@ -1,0 +1,15 @@
+## 05_spelling_in_binary.diff by Ryan Kavanagh <ryanakca@kubuntu.org>
+## Description: Fix spelling error in binary
+Index: knmap-2.1/src/pandsoptions.cpp
+===================================================================
+--- knmap-2.1.orig/src/pandsoptions.cpp	2009-08-29 22:52:44.586157311 -0400
++++ knmap-2.1/src/pandsoptions.cpp	2009-08-29 22:52:56.994154810 -0400
+@@ -51,7 +51,7 @@
+ 	m_ackCheckBox            = new QCheckBox( i18n( "TCP ACK (-PA)"        ), this, "ack check"                );
+ 	m_ackLineEdit            = new QLineEdit( this, "ack edit"             );
+ 	m_arpCheckBox            = new QCheckBox( i18n( "ARP (-PR)"            ), this, "arp check"                );
+-	m_dontPingCheckBox       = new QCheckBox( i18n( "Don't ping (-P0)"     ), this, "dont ping check"          );
++	m_dontPingCheckBox       = new QCheckBox( i18n( "Don't ping (-P0)"     ), this, "don't ping check"         );
+ 	m_echoCheckBox           = new QCheckBox( i18n( "ICMP echo (-PE)"      ), this, "icmp echo check"          );
+ 	m_netmaskCheckBox        = new QCheckBox( i18n( "ICMP netmask (-PM)"   ), this, "icmp netmask check"       );
+ 	m_synCheckBox            = new QCheckBox( i18n( "TCP SYN (-PS)"        ), this, "syn check"                );

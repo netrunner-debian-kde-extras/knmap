@@ -39,7 +39,7 @@
     </legalnotice>
     <!-- XXX IMPORTANT XXX -->
     <!-- Keep this date up to date: -->
-    <date>2008-05-07</date>
+    <date>2009-08-29</date>
     <!--  ^^^^^^^^^^ -->
   </refentryinfo>
   <refmeta>
@@ -299,7 +299,7 @@ specification</para>
             </term>
             <listitem>
               <para>running under a debugger can cause an implicit
--nograb, use -dograb to override</para>
+                  <option>-nograb</option>, use <option>-dograb</option> to override</para>
             </listitem>
           </varlistentry>
           <varlistentry>

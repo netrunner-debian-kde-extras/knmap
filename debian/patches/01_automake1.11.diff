@@ -1,14 +1,16 @@
 ## 01_automake1.10.1.diff by Ryan Kavanagh <ryanakca@kubuntu.org>
-## Description: Allow us to use automake*1.10*
---- a/admin/cvs.sh
-+++ b/admin/cvs.sh
-@@ -64,7 +64,8 @@ case $AUTOMAKE_STRING in
+## Description: Allow us to use automake*1.11*
+Index: knmap-2.1/admin/cvs.sh
+===================================================================
+--- knmap-2.1.orig/admin/cvs.sh	2009-08-30 02:34:35.562156140 +0000
++++ knmap-2.1/admin/cvs.sh	2009-08-30 02:35:08.186155303 +0000
+@@ -64,7 +64,8 @@
      echo "*** KDE requires automake 1.6.1 or newer"
      exit 1
      ;;
 -  automake*1.6.* | automake*1.7* | automake*1.8.* | automake*1.9* ) : ;;
 +  automake*1.6.* | automake*1.7* | automake*1.8.* | automake*1.9* | \
-+  automake*1.10* ) : ;;
++  automake*1.10* | automake*1.11* ) : ;;
    "" )
      echo "*** AUTOMAKE NOT FOUND!."
      echo "*** KDE requires automake 1.6.1 or newer"

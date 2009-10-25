@@ -1,3 +1,22 @@
+knmap (2.1-4) unstable; urgency=low
+
+  * Added a README.source, as required by Debian Policy Manual section 4.14
+  * Bumped standards from 3.8.2 to 3.8.3
+  * Renamed and updated 01_automake1.10.1.diff to 01_automake1.11.diff so that
+    we can use automake version 1.11. Fixes a FTBFS (Closes: #543021)
+  * 05_spelling_in_binary.diff fixes spelling errors spotted by Lintian in the
+    knmap binary
+  * Fixed hyphen used as minus error in manpage.
+  * License file is /usr/share/common-licenses/GPL-2 instead of
+    /usr/share/common-licenses/GPL
+  * Updated my copyright to 2008, 2009
+  * Since we have lots of architecture independent data, by Debian Policy
+    Manual 6.7.5, we now have an Arch: all knmap-data package.
+  * Moving the manpage to knmap-data required the addition of the
+    binary-without-manpage to knmap's lintian-overrides
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Sun, 25 Oct 2009 11:30:30 -0400
+
 knmap (2.1-3) unstable; urgency=low
 
   * Add the Debian KDE Extras Team to Uploaders.
