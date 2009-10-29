@@ -12,7 +12,8 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/kde-extras/knmap/
 
 Package: knmap
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, nmap, knmap-data
+Depends: ${shlibs:Depends}, ${misc:Depends}, nmap
+Recommends: knmap-docs
 Description: KDE interface to nmap, the Network Mapper
  Knmap is a KDE-based interface to the 'nmap' facility available at
  http://www.insecure.org/nmap.
@@ -29,10 +30,10 @@ Description: KDE interface to nmap, the Network Mapper
  auditing. It supports ping scanning (determine which hosts are up), many port
  scanning techniques, version detection, and TCP/IP fingerprinting.
 
-Package: knmap-data
+Package: knmap-docs
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: KDE interface to nmap, the Network Mapper — data files
- This package contains the data files, such as icons, documentation, etc. 
- required by Knmap, a KDE interface to nmap, the Network Mapper. See the 'knmap' 
- package's description for more details.
+Description: KDE interface to nmap, the Network Mapper — manual
+ This package contains the DocBook manual and associated icons for Knmap, a KDE
+ interface to nmap, the Network Mapper. See the 'knmap' package's description
+ for more details.
