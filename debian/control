@@ -31,6 +31,7 @@ Description: KDE interface to nmap, the Network Mapper
  scanning techniques, version detection, and TCP/IP fingerprinting.
 
 Package: knmap-docs
+Section: doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: KDE interface to nmap, the Network Mapper — manual
