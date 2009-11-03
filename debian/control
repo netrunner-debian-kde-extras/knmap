@@ -34,6 +34,7 @@ Package: knmap-docs
 Section: doc
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: knmap (<< 2.1-4) 
 Description: KDE interface to nmap, the Network Mapper — manual
  This package contains the DocBook manual and associated icons for Knmap, a KDE
  interface to nmap, the Network Mapper. See the 'knmap' package's description
