@@ -14,8 +14,10 @@ knmap (2.1-4) unstable; urgency=low
     DocBook documentation and associated icons, by Debian Policy Manual 6.7.5,
     we now have an Arch: all knmap-docs package that replaces
     knmap (<< 2.1-4).
+  * Rename debian/menu to debian/knmap.menu so that it gets automatically
+    installed by dh_installmenu
 
- -- Ryan Kavanagh <ryanakca@kubuntu.org>  Tue, 03 Nov 2009 16:15:47 -0500
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Sat, 07 Nov 2009 09:54:26 -0500
 
 knmap (2.1-3) unstable; urgency=low
 

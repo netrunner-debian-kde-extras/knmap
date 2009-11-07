@@ -19,7 +19,6 @@ build/knmap::
 
 install/knmap::
 	dh_install src/knmap.desktop usr/share/applications/kde
-	dh_install debian/menu usr/share/menu/knmap
 	rm -rf debian/knmap/usr/share/applnk
 
 install/knmap-docs::
