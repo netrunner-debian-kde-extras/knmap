@@ -10,7 +10,6 @@ Build-Depends: debhelper (>= 7),
  autoconf,
  autotools-dev,
  kdelibs4-dev,
- quilt,
  docbook2x,
  docbook
 Homepage: http://sourceforge.net/projects/knmap
