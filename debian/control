@@ -7,8 +7,8 @@ Build-Depends: debhelper (>= 7), cdbs, libtool, automake, autoconf,
  autotools-dev, kdelibs4-dev, quilt, docbook2x, docbook
 Homepage: http://sourceforge.net/projects/knmap
 Standards-Version: 3.8.3
-Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/kde-extras/knmap/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/kde-extras/knmap/
+Vcs-Git: git://svn.debian.org/git/pkg-kde/kde-extras/knmap/
+Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/knmap.git/
 
 Package: knmap
 Architecture: any
