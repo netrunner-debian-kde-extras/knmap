@@ -3,8 +3,16 @@ Section: net
 Priority: extra
 Maintainer: Ryan Kavanagh <ryanakca@kubuntu.org>
 Uploaders: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 7), cdbs, libtool, automake, autoconf,
- autotools-dev, kdelibs4-dev, quilt, docbook2x, docbook
+Build-Depends: debhelper (>= 7),
+ cdbs,
+ libtool,
+ automake,
+ autoconf,
+ autotools-dev,
+ kdelibs4-dev,
+ quilt,
+ docbook2x,
+ docbook
 Homepage: http://sourceforge.net/projects/knmap
 Standards-Version: 3.8.3
 Vcs-Git: git://svn.debian.org/git/pkg-kde/kde-extras/knmap/
