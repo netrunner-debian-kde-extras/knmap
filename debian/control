@@ -3,7 +3,7 @@ Section: net
 Priority: extra
 Maintainer: Ryan Kavanagh <ryanakca@kubuntu.org>
 Uploaders: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 7),
+Build-Depends: debhelper (>= 7.0.50~),
  libtool,
  automake,
  autoconf,
