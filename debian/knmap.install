@@ -1,3 +1,4 @@
 usr/bin/*
 usr/share/icons/*
 usr/share/apps/*
+src/knmap.desktop usr/share/applications/kde
