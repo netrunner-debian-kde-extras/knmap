@@ -1,0 +1,38 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="knmap" version="1">
+<MenuBar>
+	<Menu name="file" >
+		<Action name="scan_new" />
+		<Action name="scan_duplicate" />
+		<Action name="scan_rename" />
+		<Action name="scan_use" />
+		<Action name="scan_close" />
+		<Separator/>
+	</Menu>
+	<Menu name="help" >
+		<Action name="help_man_page" />
+		<Separator/>
+	</Menu>
+	<Menu name="profile" >
+		<text>&amp;Profiles</text>
+		<Action name="profile_load" />
+		<Action name="profile_save" />
+		<Action name="profile_save_as" />
+		<Separator/>
+		<Action name="profile_copy" />
+		<Action name="profile_delete" />
+		<Action name="profile_rename" />
+	</Menu>
+	<Menu name="settings" >
+		<text>&amp;Settings</text>
+		<Action name="settings_wrap_text" />
+		<Separator/>
+		<Action name="settings_stylesheet" />
+		<Action name="settings_local" />
+		<Separator/>
+		<Action name="settings_zoom_in" />
+		<Action name="settings_zoom_out" />
+		<Action name="settings_zoom_custom" />
+	</Menu>
+</MenuBar>
+</kpartgui>

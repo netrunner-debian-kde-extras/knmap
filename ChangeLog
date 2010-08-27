@@ -1,0 +1,36 @@
+2.1
+===
+
+* If root-only options are selected by a 'normal' user,
+  the 'kdesu' facility is envoked to run nmap as root
+
+* Previously all nmap output was "wrapped", this is now
+  an option. The default is to wrap long lines.
+
+2.0
+===
+
+* Minor syntax corrections
+* No major changes since 2.0-beta-1
+
+2.0-beta-1
+==========
+
+* Added support for multiple concurrent scans
+
+1.0
+===
+
+* Added support for the "-6" and "-A' nmap options
+
+* Changes to the docbook documentation for the "-6"
+  and "-A" option support and other small changes.
+
+1.0-beta-1
+==========
+
+* This is a completely new program!
+
+  There was a prior Knmap - the last version was 0.9
+  but that version does not compile under the current
+  Qt / KDE environments.

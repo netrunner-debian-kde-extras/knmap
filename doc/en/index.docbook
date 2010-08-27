@@ -1,0 +1,784 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY knmap "<application>Knmap</application>">
+  <!ENTITY kappname "&knmap;">
+  <!ENTITY package "kde-module"><!-- kdebase, kdeadmin, etc -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+
+<book lang="&language;">
+<bookinfo>
+	<title>The &knmap; Handbook</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Kevin</firstname>
+			<othername></othername>
+			<surname>Gilbert</surname>
+			<affiliation>
+				<address><email>kev.gilbert@cdu.edu.au</email></address>
+			</affiliation>
+		</author>
+	</authorgroup>
+	
+	<copyright>
+		<year>2005</year>
+		<year>2006</year>
+		<holder>Kevin Gilbert</holder>
+	</copyright>
+	
+	<legalnotice>&FDLNotice;</legalnotice>
+	<date>2006-01-17</date>
+	<releaseinfo>2.1</releaseinfo>
+	
+	<abstract>
+		<para>
+		&knmap; is a graphical front end to the <computeroutput>nmap</computeroutput> "Network exploration tool and security scanner".
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>KDE</keyword>
+		<keyword>Knmap</keyword>
+		<keyword>nmap</keyword>
+	</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+	<title>Introduction</title>
+	
+	<para>
+	This program is a complete re-write of one by the same name written by Alexandre Sagala. The last version of that program was 0.9 which was released on 2003-03-09 and targeted the KDE 2.2 and QT 2.3 environments. Unfortunately it does not compile on today's KDE / QT environments.
+	</para>
+	
+	<para>
+	Not to mention that it did not cater for the full set of <computeroutput>nmap</computeroutput> options. Or, perhaps, <computeroutput>nmap</computeroutput> progressed whilst that version of Knmap languished.
+	</para>
+
+	<para>
+	The icons used in this application are from the Open Clip Art Library. I am indebted to those damn fine folk as my artistic ability is zero - which is marginally above my programming ability.  :-(
+	</para>
+
+	<para>
+	Version 1.0 of &knmap; was merely a re-write of the original. Version 2.0 adds the extra functionality of multiple concurrent <computeroutput>nmap</computeroutput> scans from within the one instance of &knmap;. Version 2.1 allows a normal (non-root) user to use the privileged nmap functions via to 'kdesu' utility. (Previously, the privileged options were only available if &knmap; was run by root.)
+	</para>
+</chapter>
+
+<chapter id="using-knmap">
+	<title>Using &knmap;</title>
+	<para>
+	It is assumed that you are familiar with the operation of <computeroutput>nmap</computeroutput>.
+	</para>
+
+	<para>
+	If your aren't, then please refer to <computeroutput>nmap(1)</computeroutput> or any other resource you can lay your hands on. This document is all about how to use &knmap; as a front end to <computeroutput>nmap</computeroutput>.
+	</para>
+
+	<para>
+	This following screenshot shows an actual run of <computeroutput>nmap</computeroutput> under the control of &knmap;. The main &knmap; window is divided into two partitions - the Index Window on the left and (a stack of) Scan Windows on the right. Each Scan Window is composed of three partitions - from top to bottom: the Options Window, the Button Bar, and the Output Window.
+
+	<screenshot>
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="demo.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+	</screenshot>
+	</para>
+
+	<para>
+	The following sections contain screenshots that describe the contents of the various components of &knmap;'s main window. In the main, the contents of the Scan Window should be self-explanatory for readers familiar with <computeroutput>nmap</computeroutput>
+	</para>
+
+	<sect1 id="index_window">
+		<title>Index Window</title>
+		<para>
+		This window contains the names of all Scan Windows - with the current entry highlighted (in the KDE "Alternate Background in Lists" colour). When a scan is active, the entry for that scan will flash. When the scan has completed, if that scan is not the current entry, then the entry will be highlighted in the KDE "Selected Background" colour.
+		</para>
+
+		<para>
+		Left clicking on an entry will display the Scan Window for that scan. The caption of the &knmap; main window will be updated to show the name of the scan and its associated profile.
+		</para>
+
+		<para>
+		Entries can be manipulated via options in the "File" menu and via a RMB Context Menu. The order of the entries can be changed by dragging individual entries (multiple entries cannot be dragged concurrently).
+		</para>
+
+		<para>
+		Scans for which the "Use target host name" property is active will have an asterisk displayed before their name.
+		</para>
+	</sect1>
+
+	<sect1 id="output_window">
+		<title>Output Window</title>
+		<para>
+		As its name implies, this window displays the output of an <computeroutput>nmap</computeroutput> scan. As can be seen from the previous screenshot, the text appearance varies. The following list explains how each type of output is displayed.
+		</para>
+
+		<para>
+		<variablelist>
+			<varlistentry>
+				<term>Standard Input</term>
+				<listitem>
+					<para>
+					No font modifiers.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Standard Output</term>
+				<listitem>
+					<para>
+					Text is displayed in bold-face font.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Standard Error</term>
+				<listitem>
+					<para>
+					Text is displayed in bold-face, italic font.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="button_bar">
+		<title>Button Bar</title>
+		<para>
+		This row of buttons control the operation of &knmap;. The following screenshot shows the button row in its normal state.
+
+		<screenshot>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="button_bar.png" format="PNG"/>
+				</imageobject>
+			</mediaobject>
+		</screenshot>
+		</para>
+
+		<para>
+		The <computeroutput>Start nmap</computeroutput> and <computeroutput>Stop nmap</computeroutput> buttons should require no explanation. (No - I wont now launch into a multi-thousand word explanation of the bloody obvious.)
+		</para>
+
+		<para>
+		The <computeroutput>Clear output</computeroutput> button does just that - deletes all the text in the Output Window.
+		</para>
+
+		<para>
+		The <computeroutput>Hide options</computeroutput> button can be used to enlarge the Output Window so as to reduce scrolling as shown in the following screenshot. The text of the button reflects the state of the Options Window.
+
+		<screenshot>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="output_full.png" format="PNG"/>
+				</imageobject>
+			</mediaobject>
+		</screenshot>
+		</para>
+	</sect1>
+
+	<sect1 id="common_options">
+		<title>Common Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="common_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows the <computeroutput>nmap</computeroutput> options that are common to most network scans.
+		</para>
+
+		<para>
+		<variablelist>
+			<varlistentry>
+				<term>New data range</term>
+				<listitem>
+					<para>
+					The range of ports are entered here in the format specified in the <computeroutput>nmap</computeroutput> man page for the <computeroutput>-p</computeroutput> parametere, BUT without the protocol specifier.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Protocol</term>
+				<listitem>
+					<para>
+					Select the protocol(s) for the port list shown in the input area. Note that the list of ports can contain a combination of protocols. &knmap; will ensure that the port ranges do not overlap.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Add</term>
+				<listitem>
+					<para>
+					As soon as data has been entered in the input area, the <computeroutput>Add</computeroutput> button will be activated. Pressing this button will cause &knmap; to read the input and, if, valid, add it to the list of existing port ranges.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Delete</term>
+				<listitem>
+					<para>
+					To delete a port range, double click on the entry in the list. That entry will be copied to the input area, the <computeroutput>Protocol</computeroutput> combo box updated to reflect the selected entry and the <computeroutput>Delete</computeroutput> button will be activated.
+					</para>
+
+					<para>
+					If the button is then pressed, the input area will NOT be cleared and the <computeroutput>Add</computeroutput> button will be activated. The allows for the port range to be added back into the list if the deletion was performed in error.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="compound_options">
+		<title>Compound Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="compound_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows those <computeroutput>nmap</computeroutput> options that require a value. The associated input area is activated when the option is activated. Options preceded by a hash (#) require root privileges. When the "Start nmap" button is pressed, the 'kdesu' facility will be invoked to run nmap as the super user.
+		</para>
+	</sect1>
+
+	<sect1 id="logging_options">
+		<title>Logging Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="logging_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows the <computeroutput>nmap</computeroutput> options that relate to logging.
+		</para>
+
+		<para>
+		&knmap; considers the <computeroutput>--resume</computeroutput> option to be a logging option as its use requires that logging was enabled in the interrupted scan.
+		</para>
+	</sect1>
+
+	<sect1 id="man_page">
+		<title><computeroutput>man</computeroutput> Page</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="man_page.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		&knmap; comes packaged with the <computeroutput>man</computeroutput> page for <computeroutput>nmap</computeroutput>  version 3.93 in HTML format. See the Settings -> <computeroutput>man</computeroutput> page stylesheet... menu option for how to control the appearance of this documentation and the Settings -> Zoom in / out / custom options for controlling the size..
+		</para>
+	</sect1>
+
+	<sect1 id="ping_and_scan_options">
+		<title>Ping and Scan Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="ping_and_scan_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows the <computeroutput>nmap</computeroutput> options that control the types of ping and scans that will be performed. Options preceded by a hash (#) require root privileges. When the "Start nmap" button is pressed, the 'kdesu' facility will be invoked to run nmap as the super user.
+		</para>
+	</sect1>
+
+	<sect1 id="simple_options">
+		<title>Simple Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="simple_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows the boolean <computeroutput>nmap</computeroutput> options, i.e., those options that do not require a value. Options preceded by a hash (#) require root privileges. When the "Start nmap" button is pressed, the 'kdesu' facility will be invoked to run nmap as the super user.
+		</para>
+	</sect1>
+
+	<sect1 id="timing_options">
+		<title>Timing Options</title>
+		<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="timing_options.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+	
+		This screenshot shows the <computeroutput>nmap</computeroutput> options that control the timing of network activity. Note that the <computeroutput>Default</computeroutput> does nothing. It is provided as a means to disable the other timing options.
+		</para>
+	</sect1>
+</chapter>
+
+<chapter id="commands">
+	<title>Command Reference</title>
+	<sect1 id="knmap_menu_options">
+	<title>The &knmap; Menu Options</title>
+		<sect2>
+			<title>The File Menu</title>
+			<para>
+			<variablelist>
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Save</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Saves the current content of the Output Window. Note, however, that all text formatting is lost. If you don't like this - tough. Go tell someone that gives a shit!
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>File</guimenu>
+						<guimenuitem>Save As...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Given the above explanation of what "File -> Save" does, this option should need no further explanation.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>New scan...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Creates a new Scan Window. The dialog box shown below will be displayed to allow the name of the scan to be entered. The "Use target host name" option allows the name of the scan to automatically track the target of the nmap scan. If that option is not selected, the name of the scan can be entered in the edit window - which is activated when the "Use target host name" option is unchecked.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Duplicate scan</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							As the name imples, the current scan is duplicated. Unusual / unfortunate and / or strange behaviour may / will result if the name of the scan is not changed but a different profile is associated with the duplicated scan (name).
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul"><keycap>F2</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Rename scan...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Obvious - but it is also possible to select the "Use target host name" property via this menu item.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul"><keycap>F2</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Use target host name</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							This is a toggle item that causes the name of the scan to automatically track the target of the nmap scan.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Close scan</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Obvious - but if the profile has been updated you will be asked whether it should be saved.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<shortcut>
+							<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+						</shortcut>
+						<guimenu>File</guimenu>
+						<guimenuitem>Quit</guimenuitem>
+					</menuchoice></term>
+					<listitem><para><action>Quits</action> &knmap;</para></listitem>
+				</varlistentry>
+			</variablelist>
+			</para>
+
+			<para>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="new_scan.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+			</para>
+		</sect2>
+
+		<sect2>
+			<title>The Profiles Menu</title>
+			<para>
+			Before launching into the explanation of the items under this menu, it is necessary to define what a "Profile" is.
+			</para>
+
+			<para>
+			Quite simply, a Profile is the set of values of all the <computeroutput>nmap</computeroutput> options supported by &knmap; and some &knmap;-specific data (e.g., the order of the tabs in the Options Window and the current options tab).
+			</para>
+
+			<para>
+			The status of the Hide / Show buttons is not saved. All windows are shown on &knmap; startup regrardless of their status at the time a Profile saved.
+			</para>
+
+			<para>
+			Having the same profile associated with multiple scans is not recommended - unusual / unfortunate and / or strange behaviour may / will result.
+			</para>
+
+			<para>
+			The following screenshot shows the dialog window that controls all options in this menu.
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="profile_dlg.png" format="PNG"/>
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+			The top window is used for the entry of new names for the copy and rename functions. The lower window lists all known profiles. (For the technically minded, the profiles are stored in the standard KDE <computeroutput>knmaprc</computeroutput> configuration file - but with the name "Knmap_&lt;profile name>".)
+			</para>
+
+			<para>
+			The copy, delete and rename functions available in this menu are also available when a profile name is right-clicked in the list window.
+			</para>
+
+			<para>
+			<variablelist>
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Load profile...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Equivalent to a "File -> Open" in your favourite editor. If the current profile has been modified you will be asked if you want to save it prior to loading the new profile.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Save profile...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Equivalent to a "File -> Save" in your favourite editor.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Save profile as...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Equivilent to a "File -> Save" as in your favourite editor.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Copy profile...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							The selected profile is copied, the name of the new profile is entered in the upper input window.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Delete profile...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Bloody obvious.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Profiles</guimenu>
+						<guimenuitem>Rename profile...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							The name of the selected profile is changed to the name entered in the upper input window.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+			</para>
+		</sect2>
+
+		<sect2>
+			<title>The Settings Menu</title>
+			<para>
+			<variablelist>
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>Wrap text</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Selects whether the nmap output should be word-wrapped at the windows right-border.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>'man' page stylesheet...</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Allows for the selection of the stylesheet to be used when the nmap man page is displayed.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>Use local 'man' page</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							This is a toggle action, the text changes depending upon its state. If the &knmap; nmap man page is being displayed, this option allows for the >man page stored on the local machine to be displayed. This is useful when the local version of the nmap man page differs from the version distrubuted with &knmap;.
+							</action>
+						</para>
+
+						<para>
+							<action>
+							When the local man page is being displayed, this option allows for the &knmap; version to be displayed.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>Zoom in</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Increases the font size in the man page window by 25% - limits are 20% - 300%.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>Zoom out</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Decreases the font size in the man page window by 25% - limits are 20% - 300%.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term><menuchoice>
+						<guimenu>Settings</guimenu>
+						<guimenuitem>Zoom custom</guimenuitem>
+					</menuchoice></term>
+					<listitem>
+						<para>
+							<action>
+							Allows manual control of the font size - limits are 20% - 300%.
+							</action>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+			</para>
+
+			<para>
+			The remaining options in this menu are standard KDE options.
+			</para>
+		</sect2>
+
+		<sect2>
+			<title>The Help Menu</title>
+			<para>
+			&help.menu.documentation;
+			</para>
+		</sect2>
+	</sect1>
+</chapter>
+
+<chapter id="developers">
+	<title>Developer's Guide to &knmap;</title>
+	<para>
+	The only item worthy of mention here is the file <computeroutput>nmap_manpage.html.diff</computeroutput>. This file contains a <computeroutput>diff</computeroutput> of the <computeroutput>nmap</computeroutput> version 3.93 HTML formatted <computeroutput>man</computeroutput> page and that distributed with &knmap;. You can use this to update your version of that <computeroutput>man</computeroutput> page.
+	</para>
+</chapter>
+
+<chapter id="credits">
+	<title>Credits and License</title>
+	<para>
+	&knmap;
+	</para>
+
+	<para>
+	Program copyright 2005, 2006 Kevin Gilbert <email>kev.gilbert@cdu.edu.au</email>
+	</para>
+	
+	<para>
+	Documentation copyright 2005, 2006 Kevin Gilbert <email>kev.gilbert@cdu.edu.au</email>
+	</para>
+	
+	&underFDL;
+	&underGPL;
+</chapter>
+
+<appendix id="installation">
+	<title>Installation</title>
+
+	<sect1 id="getting-knmap">
+	<title>How to obtain &knmap;</title>
+
+	<para>
+	Now let me see... You're reading this documentation - which come packaged with &knmap;, which means that you have &knmap; installed, which means that you have somehow obtained &knmap;, and now you want to know how to obtain &knmap;?
+	</para>
+
+	<para>
+	You have _way_ too much time on your hands! ;-)
+	</para>
+
+	<para>
+	Okay, Okay. Go to <ulink url="http://sourceforge.net/projects/knmap">http://sourceforge.net/projects/knmap</ulink> and follow the download links.
+	</para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title>Requirements</title>
+		<para>
+		&knmap; was developed and tested under Qt 3.3.4 / KDE 3.4 &amp; 3.5. YMMV vary if your configuration differs from this.
+		</para>
+
+		<para>
+		And, of course, you will need <computeroutput>nmap</computeroutput>. Go to <ulink url="http://www.insecure.org/nmap">http://www.insecure.org/nmap</ulink> for details on how to download <computeroutput>nmap</computeroutput>.
+		</para>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title>Compilation and Installation</title>
+		&install.compile.documentation;
+	</sect1>
+</appendix>
+
+	&documentation.index;
+</book>
