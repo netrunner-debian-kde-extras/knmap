@@ -1,3 +1,27 @@
+knmap (2.1-5) unstable; urgency=low
+
+  * Migrated packaging from SVN to Git
+    - Updated Vcs-* tags for Git
+    - Move B-Ds to one per line to make them easier to manage in a VCS
+  * Debian source format 3.0 (quilt)
+    - Drop quilt from the B-B
+  * Move to a dh7 debian/rules
+    - Drop cdbs from the B-D
+    - Bump debhelper version to 7.0.50~ for the overrides
+    - Install src/knmap.desktop from knmap.install now that we're no
+      longer doing it in rules
+    - Install knamp.1 from debian/knmap.manpages now that we're no longer
+      doing it in rules
+    - Install the documentation link from debian/knmap.links, (Closes:
+      #594102)
+    - B-D on pkg-kde-tools now that we're not using CDBS's kde.mk
+  * Documentation link in knmap-docs depends on knmap, updated debian/control
+  * Update knmap-docs install file with sane documentation path
+  * Bumped to standards version 3.9.1
+  * Don't ship README and AUTHORS, they contain nothing of value
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Sun, 29 Aug 2010 08:34:21 -0400
+
 knmap (2.1-4) unstable; urgency=low
 
   * Added a README.source, as required by Debian Policy Manual section 4.14
