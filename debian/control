@@ -14,7 +14,7 @@ Build-Depends: debhelper (>= 7.0.50~),
  docbook
 Homepage: http://sourceforge.net/projects/knmap
 Standards-Version: 3.9.1
-Vcs-Git: git://svn.debian.org/git/pkg-kde/kde-extras/knmap/
+Vcs-Git: git://git.debian.org/git/pkg-kde/kde-extras/knmap/
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-extras/knmap.git
 
 Package: knmap
